@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-
-// Mock iPad data
 const ipads = [
   {
     id: 1,
@@ -14,65 +11,54 @@ const ipads = [
     imgSrc: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-air-model-unselect-gallery-2-202405_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=80&.v=azZtTlRzREZ3NzhWaHRDQW5YeUV0UEs0TkxxOFYxN2dtSHJMdW5sNDFVOUlhVTFOeW83YW5oSmZSbkJQUVFVdFBTRzhFbXhrSlpyaVYxRTU4VUZ2NXlaSE1Qa0haZTFvMWVJTkxjaWwxSnhVaWV0MngrSm1qUU9yRGpSUGRKRFBiZGNxdlVhUVQ1T2lKZVdKL04ySU5BPT0=&traceId=1',
     details: 'The iPad Air features a stunning Retina display, A14 Bionic chip, and support for the Magic Keyboard and Apple Pencil.'
   },
+  // ... предыдущие iPad
   {
-    id: 2,
-    name: 'iPad Pro 11"',
-    description: 'High-performance tablet with a stunning display and ProMotion technology.',
-    price: '$799',
-    bgColor: 'bg-blue-100',
-    borderColor: 'border-blue-300',
-    priceColor: 'text-blue-600',
-    buttonColor: 'bg-blue-600 hover:bg-blue-700',
-    imgSrc: 'https://olcha.uz/image/600x600/products/2021-06-02/planshet-apple-ipad-pro-11-2021-128gb-wi-fi-space-gray-23956-0.jpeg',
-    details: 'The iPad Pro 11" offers a Liquid Retina display with ProMotion, True Tone, and P3 wide color. It is powered by the M1 chip for unmatched performance.'
+    id: 7,
+    name: 'iPad Pro 13"',
+    description: 'Next-level performance with an expansive display.',
+    price: '$1,199',
+    bgColor: 'bg-purple-100',
+    borderColor: 'border-purple-300',
+    priceColor: 'text-purple-600',
+    buttonColor: 'bg-purple-600 hover:bg-purple-700',
+    imgSrc: 'https://www.apple.com/v/ipad-pro/g/images/meta/ipad-pro__c5ltuwokfsyi_og.png',
+    details: 'The iPad Pro 13" features an M1 chip, Liquid Retina display, and advanced camera system for ultimate productivity and creativity.'
   },
   {
-    id: 3,
-    name: 'iPad Pro 12.9"',
-    description: 'The ultimate iPad experience with a large display and advanced features.',
-    price: '$1,099',
-    bgColor: 'bg-gray-100',
-    borderColor: 'border-gray-300',
-    priceColor: 'text-gray-600',
-    buttonColor: 'bg-gray-600 hover:bg-gray-700',
-    imgSrc: 'https://www.jarir.com/cdn-cgi/image/fit=contain,width=350,height=auto,quality=85,metadata=none/https://ak-asset.jarir.com/akeneo-prod/asset/9/9/8/e/998e3dcc2a5cf0a46bc37e547dc662ecaabc41ec_598790_1.jpg',
-    details: 'The iPad Pro 12.9" comes with a stunning Liquid Retina XDR display, M1 chip, and supports the new Apple Pencil and Magic Keyboard for a complete experience.'
-  },
-  {
-    id: 4,
-    name: 'iPad Mini',
-    description: 'Compact and powerful, ideal for on-the-go use and entertainment.',
-    price: '$499',
-    bgColor: 'bg-pink-100',
-    borderColor: 'border-pink-300',
-    priceColor: 'text-pink-600',
-    buttonColor: 'bg-pink-600 hover:bg-pink-700',
-    imgSrc: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-mini-finish-select-gallery-202211-space-gray-wifi_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1670631639152',
-    details: 'The iPad Mini features an 8.3-inch Liquid Retina display, A15 Bionic chip, and support for the 2nd generation Apple Pencil.'
-  },
-  {
-    id: 5,
-    name: 'iPad 10.2"',
-    description: 'Affordable and versatile, great for everyday use and productivity.',
+    id: 8,
+    name: 'iPad 9th Gen',
+    description: 'The classic iPad experience, now with enhanced features.',
     price: '$329',
     bgColor: 'bg-green-100',
     borderColor: 'border-green-300',
     priceColor: 'text-green-600',
     buttonColor: 'bg-green-600 hover:bg-green-700',
-    imgSrc: 'https://i03.hsncdn.com/is/image/HomeShoppingNetwork/rocs1200/apple-ipad-9th-gen-102-64gb-wifi-bundle-d-20231201161730867~22653547w_alt1.jpg',
-    details: 'The iPad 10.2" features a large Retina display, A13 Bionic chip, and compatibility with the 1st generation Apple Pencil and Smart Keyboard.'
+    imgSrc: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-9th-gen-select-wifi-space-gray-202109_FMT_WHH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1631647165000',
+    details: 'The iPad 9th Generation features a 10.2-inch Retina display, A13 Bionic chip, and compatibility with the Smart Keyboard and Apple Pencil.'
   },
   {
-    id: 6,
-    name: 'iPad Air 5th Gen',
-    description: 'Latest generation iPad Air with improved performance and design.',
-    price: '$699',
-    bgColor: 'bg-yellow-100',
-    borderColor: 'border-yellow-300',
-    priceColor: 'text-yellow-600',
-    buttonColor: 'bg-yellow-600 hover:bg-yellow-700',
-    imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGeMlxiRuqqmaM0yTU476reA3kBfpvK1OzXA&s',
-    details: 'The iPad Air 5th Generation features the M1 chip, 10.9-inch Liquid Retina display, and compatibility with Apple Pencil 2nd generation.'
+    id: 9,
+    name: 'iPad Pro 12.9" (2022)',
+    description: 'The most powerful iPad ever with a stunning display.',
+    price: '$1,299',
+    bgColor: 'bg-gray-200',
+    borderColor: 'border-gray-400',
+    priceColor: 'text-gray-800',
+    buttonColor: 'bg-gray-800 hover:bg-gray-900',
+    imgSrc: 'https://www.apple.com/v/ipad-pro/g/images/meta/ipad-pro-12.9__f5mr7qzme4ua_og.png',
+    details: 'The iPad Pro 12.9" (2022) comes with a Liquid Retina XDR display, M2 chip, and support for 5G connectivity.'
+  },
+  {
+    id: 10,
+    name: 'iPad Air 4th Gen',
+    description: 'Power and versatility in a thin design.',
+    price: '$599',
+    bgColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
+    priceColor: 'text-blue-800',
+    buttonColor: 'bg-blue-600 hover:bg-blue-700',
+    imgSrc: 'https://www.apple.com/v/ipad-air/g/images/meta/ipad-air__d0o9e5g3f28m_og.png',
+    details: 'The iPad Air 4th Gen features a Liquid Retina display, A14 Bionic chip, and compatibility with Apple Pencil (2nd generation).'
   },
 ];
 
@@ -175,4 +161,3 @@ const Ipad = () => {
 }
 
 export default Ipad;
-
